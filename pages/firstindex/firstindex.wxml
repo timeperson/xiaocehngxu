@@ -1,0 +1,2 @@
+<!--pages/firstindex/firstindex.wxml-->
+<button bindtap="bindViewTap">基础导航</button>

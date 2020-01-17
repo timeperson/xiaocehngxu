@@ -1,0 +1,12 @@
+<!--components/navbar/navbar.wxml-->
+<view class='topbar'>
+  <view class='status' style="height:{{statusHeight}}px"></view>
+  <view class='navbar' style="height:{{navHeight}}px">
+    <view class='navbar_back' bindtap='backClick'>
+      <image src='../../images/black_back.png'></image>
+    </view>
+    <view class='navbar_title' style="height:{{navHeight}}px">
+      <view>标题</view>
+    </view>
+  </view>
+</view>
