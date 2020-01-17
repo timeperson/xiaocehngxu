@@ -1,5 +1,20 @@
 Component({
   properties: {
+    header: {
+      type: Object,
+      value: {
+        homeCapsule: false,
+        headerbg: "#fff",
+        title: "",
+        fontColor: "#000",
+        fontSize: '16',
+        hiddenBlock: false,
+        capsulebg: 'rgba(0,0,0,0.2)',
+        capsuleborder: '1px solid rgba(0, 0, 0, 0.1)',
+        capsulesep: '1px solid rgba(255,255,255,0.2)',
+        slot: false
+      }
+    },
     /**
      * 自定义返回事件处理
      * customBackReturn="{{true}}" bind:customBackReturn="customBackReturn"
@@ -8,9 +23,6 @@ Component({
       type: Boolean,
       value: false
     }
-  },
-  data: {
-
   },
   methods: {
     backClick() {
@@ -27,6 +39,11 @@ Component({
           })
         }
       }
+    },
+    homeClick() {
+      wx.switchTab({
+        url: '/pages/index/index',
+      })
     }
   },
   attached() {
@@ -34,7 +51,6 @@ Component({
     wx.getSystemInfo({
       success(res) {
         var isIos = res.system.indexOf('iOS') > -1;
-        console.log(res)
         self.setData({
           statusHeight: res.statusBarHeight,
           navHeight: isIos ? 44 : 48
